@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { changeServiceField, addService, clearForm, cancelEditing, editService } from '../actions/actionCreators';
 
 function ServiceAdd () {
@@ -13,7 +13,7 @@ function ServiceAdd () {
             const editingItem = items.find(o => o.id === isEditing.id);
             dispatch(editService(editingItem.name, editingItem.price));
         } 
-    },[isEditing])
+    },[isEditing, items, dispatch])
     
     const handleChange = evt => {
         const {name, value} = evt.target;
@@ -22,7 +22,6 @@ function ServiceAdd () {
 
     const handleSubmit = evt => {
         evt.preventDefault();
-        console.log(item.id, item.name, item.price);
         dispatch(addService(isEditing.id, item.name, item.price));
         dispatch(clearForm());
         dispatch(cancelEditing());

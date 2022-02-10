@@ -5,3 +5,4 @@ export const CLEAR_SERVICE_FIELD = 'CLEAR_SERVICE_FIELD';
 export const CANCEL_EDIT_STATE = 'CANCEL_EDIT_STATE';
 export const BEGIN_EDIT = 'BEGIN_EDIT';
 export const EDIT_ITEM = 'EDITING';
+export const EDIT_FILTER = 'EDIT_FILTER';
